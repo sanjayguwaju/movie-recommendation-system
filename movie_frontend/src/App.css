@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px;
+}
