@@ -12,7 +12,7 @@ const App = () => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/movies/movies-cards-details"
+          "http://localhost:5001/api/movies/movies-cards-details"
         );
         setMovies(response.data);
       } catch (error) {
