@@ -49,15 +49,17 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="search-form-container">
       <form className="search-form" onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search by movie name"
           value={searchQuery}
           onChange={handleSearchChange}
+          className="search-input"
         />
-        <button type="submit">Search</button>
       </form>
+      </div>
       {filteredMovies.length === 0 && <div>No movies found</div>}
       {filteredMovies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
