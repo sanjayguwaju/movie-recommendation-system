@@ -23,7 +23,10 @@ const MovieCard = ({ movie }) => {
             <p>Plot: {movie.fullplot}{" "} </p>
           </React.Fragment>
         )}
-          {!showMore && (
+
+      </div>
+      <div>
+      {!showMore && (
             <button className="show-more-button" onClick={handleShowMore}>
               Show More
             </button>

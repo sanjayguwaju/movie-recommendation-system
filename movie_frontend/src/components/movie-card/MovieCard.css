@@ -11,7 +11,7 @@
 }
 
 .card img {
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -24,4 +24,14 @@
 
 .card p {
   margin-bottom: 5px;
-}  
+}
+
+.show-more-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dab1fb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

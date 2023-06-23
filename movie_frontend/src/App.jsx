@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./components/movie-card/MovieCard";
 import "./App.css";
+import SearchIcon from '@mui/icons-material/Search';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -50,20 +51,25 @@ const App = () => {
   return (
     <div className="App">
       <div className="search-form-container">
-      <form className="search-form" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder="Search by movie name"
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="search-input"
-        />
-      </form>
+        <form className="search-form" onSubmit={handleSearchSubmit}>
+          <input
+            type="text"
+            placeholder="Search by movie name"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+        </form>
+        <button className="search-btn">
+          <SearchIcon className="search-icon" />
+        </button>
       </div>
-      {filteredMovies.length === 0 && <div>No movies found</div>}
-      {filteredMovies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      <div className="movie-container">
+        {filteredMovies.length === 0 && <div>No movies found</div>}
+        {filteredMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
     </div>
   );
 };
