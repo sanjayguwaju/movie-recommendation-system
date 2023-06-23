@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
 }
 
 .loading {
@@ -17,7 +16,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  margin-bottom: 20px;
 }
+
 .search-form {
   border-radius: 30px 0 0 30px;
 }
@@ -32,4 +34,27 @@
   font-size: 1.2rem;
   border-radius: 30px 0 0 30px;
   text-align: center;
+}
+
+.search-btn {
+  width: 80px;
+  background-color: rgb(80, 78, 70);
+  border-radius: 0 30px 30px 0;
+  padding: 8.5px;
+  margin-left: 40px;
+  margin-top: 0.5px;
+  border: none;
+}
+
+.search-icon {
+  color: white;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top:100px;
+  background-color: rgb(131, 116, 146);
 }
