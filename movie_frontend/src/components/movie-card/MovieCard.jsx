@@ -4,9 +4,15 @@ import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
   const [showMore, setShowMore] = useState(false);
+  const [showLess, setShowLess] = useState(false);
+
 
   const handleShowMore = () => {
     setShowMore(!showMore);
+  };
+
+  const handleShowLess = () => {
+    setShowMore(showLess);
   };
 
   return (
@@ -21,6 +27,7 @@ const MovieCard = ({ movie }) => {
             <p>Rating: {movie.imdb.rating}</p>
             <p>Votes: {movie.imdb.votes}</p>
             <p>Plot: {movie.fullplot}{" "} </p>
+            <button className="show-less-button" onClick={handleShowLess}>Show Less</button>
           </React.Fragment>
         )}
 
