@@ -213,6 +213,17 @@ const getMoviesCardDetail = async () => {
   }
 };
 
+const getMoviesTitle = async () => {
+  try {
+    const movies = await Movie.find({},{title: 1, _id: 0}).limit(10);
+    console.log(movies);
+    return movies;
+   
+  } catch (err) {
+    throw new Error(`Failed to get movies title: ${err.message}`);
+  }
+};
+
 module.exports = {
   getAllMovies,
   createMovie,
@@ -223,5 +234,6 @@ module.exports = {
   getAverageDurationByGenre,
   getMostCommonCastMembers,
   getMoviesComments,
-  getMoviesCardDetail
+  getMoviesCardDetail,
+  getMoviesTitle,
 };
