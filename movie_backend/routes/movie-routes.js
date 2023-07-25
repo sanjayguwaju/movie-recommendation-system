@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getAllMoviesController, createMovieController, getMovieByIdController, updateMovieByIdController, deleteMovieByIdController,getTopRatedMoviesController,getAverageDurationByGenreController,getMostCommonCastMembersController,getMoviesCommentsController,getMoviesCardDetailController} = require('../controllers/movie-controller');
+const {getAllMoviesController, createMovieController, getMovieByIdController, updateMovieByIdController, deleteMovieByIdController,getTopRatedMoviesController,getAverageDurationByGenreController,getMostCommonCastMembersController,getMoviesCommentsController,getMoviesCardDetailController,getMoviesTitleController} = require('../controllers/movie-controller');
 
 
 router.get('/movies', getAllMoviesController);
@@ -13,6 +13,7 @@ router.get('/movies/average-duration',getAverageDurationByGenreController);
 router.get('/movies/most-common-cast', getMostCommonCastMembersController);
 router.get('/movies/movies-comments', getMoviesCommentsController);
 router.get('/movies/movies-cards-details', getMoviesCardDetailController);
+router.get('/movies/movies-title',getMoviesTitleController);
 
 
 // Route to retrieve a specific movie by ID
