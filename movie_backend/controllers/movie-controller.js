@@ -89,6 +89,15 @@ const getMoviesCardDetailController = async (req, res, next) => {
   }
 };
 
+const getMoviesTitleController = async (req, res, next)=> {
+  try{
+    const movies = await movieService.getMoviesTitle();
+    res.json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getAllMoviesController,
   createMovieController,
@@ -99,5 +108,6 @@ module.exports = {
   getAverageDurationByGenreController,
   getMostCommonCastMembersController,
   getMoviesCommentsController,
-  getMoviesCardDetailController
+  getMoviesCardDetailController,
+  getMoviesTitleController
 };
