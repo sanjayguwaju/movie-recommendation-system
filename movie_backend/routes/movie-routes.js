@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getAllMoviesController, createMovieController, getMovieByIdController, updateMovieByIdController, deleteMovieByIdController,getTopRatedMoviesController,getAverageDurationByGenreController,getMostCommonCastMembersController,getMoviesCommentsController,getMoviesCardDetailController,getMoviesTitleController,getActionMoviesController,getMoviesReleasedController,getMoviesDirectedbyStevenSpielberg} = require('../controllers/movie-controller');
+const {getAllMoviesController, createMovieController, getMovieByIdController, updateMovieByIdController, deleteMovieByIdController,getTopRatedMoviesController,getAverageDurationByGenreController,getMostCommonCastMembersController,getMoviesCommentsController,getMoviesCardDetailController,getMoviesTitleController,getActionMoviesController,getMoviesReleasedController,getMoviesDirectedbyStevenSpielberg,getTomHanksMoviesController} = require('../controllers/movie-controller');
 
 
 router.get('/movies', getAllMoviesController);
@@ -15,8 +15,8 @@ router.get('/movies/movies-comments', getMoviesCommentsController);
 router.get('/movies/movies-cards-details', getMoviesCardDetailController);
 router.get('/movies/movies-title',getMoviesTitleController);
 router.get('/movies/action-movies',getActionMoviesController);
-router.get('/movies/movies-released-after-1930',getActionMoviesController);
-// router.get('/movies/tom-hank-movies',getTomHanksMoviesController);
+router.get('/movies/movies-released-after-1930',getMoviesReleasedController);
+router.get('/movies/tom-hank-movies',getTomHanksMoviesController);
 router.get('/movies/directed-by-steven-spielberg',getMoviesDirectedbyStevenSpielberg);
 
 

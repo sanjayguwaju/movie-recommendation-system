@@ -234,7 +234,7 @@ const getActionMovies = async () => {
 
 const getMoviesReleased = async () => {
   try {
-    const movies = await Movie.find({year:{ $gt: 1930}},{title: 1, _id: 0}).limit(10);
+    const movies = await Movie.find({year:{ $gt: 1950}},{title: 1, _id: 0,year: 1}).limit(25);
     return movies; 
   } catch (err) {
     throw new Error(`Failed to get Movies released after 1930: ${err.message}`);
@@ -247,6 +247,15 @@ const getMoviesDirected = async () => {
     return movies; 
   } catch (err) {
     throw new Error(`Failed to get Movies released after 1930: ${err.message}`);
+  }
+};
+
+ const getTomHanksMovies = async () => {
+  try {
+    const movies = await Movie.find({cast: "Tom Hanks"},{title: 1, _id: 0}).limit(10);
+    return movies; 
+  } catch (err) {
+    throw new Error(`Failed to get Tom Hanks Movies: ${err.message}`);
   }
 };
 
@@ -265,4 +274,5 @@ module.exports = {
   getActionMovies,
   getMoviesReleased,
   getMoviesDirected,
+  getTomHanksMovies,
 };

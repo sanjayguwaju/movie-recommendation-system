@@ -125,6 +125,17 @@ const getMoviesDirectedbyStevenSpielberg = async (req, res, next)=> {
     next(err);
   }
 };
+
+const getTomHanksMoviesController = async (req, res, next)=> {
+  try{
+    const movies = await movieService.getTomHanksMovies();
+    // console.log("TomHanksMovies",movies);
+    res.json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getAllMoviesController,
   createMovieController,
@@ -139,5 +150,6 @@ module.exports = {
   getMoviesTitleController,
   getActionMoviesController,
   getMoviesReleasedController,
-  getMoviesDirectedbyStevenSpielberg
+  getMoviesDirectedbyStevenSpielberg,
+  getTomHanksMoviesController,
 };
