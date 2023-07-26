@@ -98,6 +98,33 @@ const getMoviesTitleController = async (req, res, next)=> {
   }
 };
 
+const getActionMoviesController = async (req, res, next)=> {
+  try{
+    const movies = await movieService.getActionMovies();
+    res.json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getMoviesReleasedController = async (req, res, next)=> {
+  try{
+    const movies = await movieService.getMoviesReleased();
+    res.json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+const getMoviesDirectedbyStevenSpielberg = async (req, res, next)=> {
+  try{
+    const movies = await movieService.getMoviesDirected();
+    res.json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
 module.exports = {
   getAllMoviesController,
   createMovieController,
@@ -109,5 +136,8 @@ module.exports = {
   getMostCommonCastMembersController,
   getMoviesCommentsController,
   getMoviesCardDetailController,
-  getMoviesTitleController
+  getMoviesTitleController,
+  getActionMoviesController,
+  getMoviesReleasedController,
+  getMoviesDirectedbyStevenSpielberg
 };
