@@ -217,10 +217,45 @@ const getMoviesTitle = async () => {
   try {
     const movies = await Movie.find({},{title: 1, _id: 0}).limit(10);
     console.log(movies);
-    return movies;
-   
+    return movies; 
   } catch (err) {
     throw new Error(`Failed to get movies title: ${err.message}`);
+  }
+};
+
+const getActionMovies = async () => {
+  try {
+    const movies = await Movie.find({genres:"Action"},{title: 1, _id: 0}).limit(10);
+    return movies; 
+  } catch (err) {
+    throw new Error(`Failed to get Action movies: ${err.message}`);
+  }
+};
+
+const getMoviesReleased = async () => {
+  try {
+    const movies = await Movie.find({year:{ $gt: 1950}},{title: 1, _id: 0,year: 1}).limit(25);
+    return movies; 
+  } catch (err) {
+    throw new Error(`Failed to get Movies released after 1930: ${err.message}`);
+  }
+};
+
+const getMoviesDirected = async () => {
+  try {
+    const movies = await Movie.find({directors:"Steven Spielberg"},{title: 1, _id: 0}).limit(10);
+    return movies; 
+  } catch (err) {
+    throw new Error(`Failed to get Movies released after 1930: ${err.message}`);
+  }
+};
+
+ const getTomHanksMovies = async () => {
+  try {
+    const movies = await Movie.find({cast: "Tom Hanks"},{title: 1, _id: 0}).limit(10);
+    return movies; 
+  } catch (err) {
+    throw new Error(`Failed to get Tom Hanks Movies: ${err.message}`);
   }
 };
 
@@ -236,4 +271,8 @@ module.exports = {
   getMoviesComments,
   getMoviesCardDetail,
   getMoviesTitle,
+  getActionMovies,
+  getMoviesReleased,
+  getMoviesDirected,
+  getTomHanksMovies,
 };
