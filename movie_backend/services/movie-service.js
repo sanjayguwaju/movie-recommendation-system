@@ -46,6 +46,8 @@ const deleteMovieById = async (movieId) => {
   }
 };
 
+// Top rated movies services
+
 const getTopRatedMovies = async () => {
   try {
     const pipeline =  [
